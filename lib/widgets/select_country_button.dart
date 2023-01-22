@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 
 class SelectCountryButton extends StatelessWidget {
   final String countryName;
-  final String countryLabel;
+
   final Function? callback;
 
   const SelectCountryButton({
     Key? key,
     required this.countryName,
-    required this.countryLabel,
     required this.callback,
   }) : super(key: key);
 
@@ -20,7 +19,7 @@ class SelectCountryButton extends StatelessWidget {
         callback!(countryName);
       },
       child: Text(
-        countryName,
+        countryName.toUpperCase(),
         style: const TextStyle(fontSize: 20),
       ),
     );

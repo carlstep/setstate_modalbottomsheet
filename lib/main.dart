@@ -16,12 +16,10 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String selectedLocation = '';
   String countryName = 'usa';
-  String countryLabel = 'USA';
 
   callback(varCountryName) {
     setState(() {
       countryName = varCountryName;
-      countryLabel = varCountryName;
     });
   }
 
@@ -41,7 +39,7 @@ class _MyAppState extends State<MyApp> {
                 style: TextStyle(fontSize: 20),
               ),
               Text(
-                countryLabel,
+                countryName.toLowerCase(),
                 style: const TextStyle(fontSize: 30),
               ),
               const SizedBox(height: 10),
@@ -53,19 +51,16 @@ class _MyAppState extends State<MyApp> {
               SelectCountryButton(
                 countryName: 'germany',
                 callback: callback,
-                countryLabel: 'Germany',
               ),
               const SizedBox(height: 15),
               SelectCountryButton(
                 countryName: 'cambodia',
                 callback: callback,
-                countryLabel: 'Cambodia',
               ),
               const SizedBox(height: 15),
               SelectCountryButton(
                 countryName: 'greece',
                 callback: callback,
-                countryLabel: 'Greece',
               ),
             ],
           ),
